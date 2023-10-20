@@ -44,6 +44,8 @@ return {
         end,
         capabilities = capabilities,
       },
+
+      fvm = true,
     })
   end,
 }
