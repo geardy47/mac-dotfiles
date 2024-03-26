@@ -1,23 +1,28 @@
 live_config_reload: true
 
+env:
+  TERM: xterm-256color
+
 window:
   opacity: 1
   dynamic_padding: false
   padding:
     x: 8
-    y: 0
+    y: 2
   decorations: buttonless
   option_as_alt: Both
 
 font:
   normal:
     family: "CaskaydiaCove Nerd Font Mono"
+    # family: "FiraCode Nerd Font Mono"
+    # family: "JetBrainsMono Nerd Font Mono"
     style: Regular
   use_thin_stroke: true
   size: 14.0
   offset:
     x: 0
-    y: 2
+    y: 4
 
 scrolling:
   history: 2000

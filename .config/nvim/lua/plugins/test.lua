@@ -1,22 +1,30 @@
 return {
-  "nvim-neotest/neotest-plenary",
-  "sidlatau/neotest-dart",
-  {
-    "nvim-neotest/neotest",
-    opts = {
-      adapters = {
-        "neotest-plenary",
-        ["neotest-dart"] = {
-          command = "fvm flutter", -- Command being used to run tests. Defaults to `flutter`
-          -- Change it to `fvm flutter` if using FVM
-          -- change it to `dart` for Dart only tests
-          use_lsp = false, -- When set Flutter outline information is used when constructing test name.
-        },
-      },
-
-      summary = {
-        open = "botright vsplit | vertical resize 70",
-      },
-    },
-  },
+  "vim-test/vim-test",
+  -- "nvim-neotest/neotest-vim-test",
+  -- {
+  --   "nvim-neotest/neotest",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "antoinemadec/FixCursorHold.nvim",
+  --     "akinsho/flutter-tools.nvim",
+  --     "vim-test/vim-test",
+  --     "nvim-neotest/neotest-vim-test",
+  --     "sidlatau/neotest-dart",
+  --     "nvim-treesitter/nvim-treesitter",
+  --   },
+  --   opts = {
+  --     adapters = {
+  --       ["neotest-dart"] = {
+  --         command = "fvm flutter",
+  --         use_lsp = true,
+  --       },
+  --       ["neotest-vim-test"] = {
+  --         allow_file_types = { "dart" },
+  --       },
+  --     },
+  --     quickfix = { enabled = false },
+  --     diagnostic = { enabled = false },
+  --     summary = { open = "botright vsplit | vertical resize 50" },
+  --   },
+  -- },
 }
