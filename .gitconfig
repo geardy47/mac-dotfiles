@@ -19,3 +19,5 @@
 ;   path = /opt/homebrew/bin/meld
 ; [mergetool]
 ;   keepBackup = false
+[init]
+	defaultBranch = main

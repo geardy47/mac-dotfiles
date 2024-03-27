@@ -81,6 +81,7 @@ export ANDROID_HOME=~/android-sdk
 export PATH=$ANDROID_HOME/cmdline-tools/latest/bin/:$PATH
 export PATH=$ANDROID_HOME/emulator/:$PATH
 export PATH=$ANDROID_HOME/platform-tools/:$PATH
+export PATH=$PATH:"/Users/gentashandi/fvm/default/bin"
 
 export OPENAI_API_KEY='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'
 
@@ -121,10 +122,24 @@ alias ignoregenerateddart="git rm --cached --ignore-unmatch lib/application/app/
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 alias v=nvim
 
 # Add colors to Terminal
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias dotfiles='/usr/bin/git --git-dir=/Users/gentashandi/.dotfiles/ --work-tree=/Users/gentashandi'
+
+export ZK_NOTEBOOK_DIR=~/zet/notes/
+alias neorg='cd ~/zet/notes/ && v'
+alias raya='cd ~/Work/Raya/Projects/raya1/ && v'
+
+if [ -z "$TMUX" ]
+then
+    tmux attach -t $USER || tmux new -s $USER
+fi
+# if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+#     tmux attach-session -t $USER || tmux new-session -s $USER
+# fi
+export PATH="$PATH":"$HOME/.pub-cache/bin"
