@@ -2,6 +2,13 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
+      ensure_installed = {
+        "css",
+        "gitignore",
+        -- "go",
+        "scss",
+        "svelte",
+      },
       highlight = {
         disable = { "dart" },
       },
