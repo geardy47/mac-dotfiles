@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,33 +70,10 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    git
-    flutter
-    macos
-    zsh-autosuggestions
-)
-
-export ANDROID_HOME=~/android-sdk
-export PATH=$ANDROID_HOME/cmdline-tools/latest/bin/:$PATH
-export PATH=$ANDROID_HOME/emulator/:$PATH
-export PATH=$ANDROID_HOME/platform-tools/:$PATH
-export PATH=$PATH:"/Users/gentashandi/fvm/default/bin"
-
-export OPENAI_API_KEY='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'
-
+plugins=(git flutter)
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR=nvim
-
-neovidecloseterminal () {
-  exit &&
-  neovide "$@"
-}
-
-alias nv="neovidecloseterminal"
-alias ignoregenerateddart="git rm --cached --ignore-unmatch lib/application/app/app.locator.dart && git rm --cached --ignore-unmatch lib/application/app/app.router.dart && find . -name '*.g.dart' -exec git rm --cached --ignore-unmatch {} \; && find . -name '*.freezed.dart' -exec git rm --cached --ignore-unmatch {} \;"
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -122,24 +99,56 @@ alias ignoregenerateddart="git rm --cached --ignore-unmatch lib/application/app/
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export EDITOR=nvim
 alias v=nvim
 
-# Add colors to Terminal
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-alias dotfiles='/usr/bin/git --git-dir=/Users/gentashandi/.dotfiles/ --work-tree=/Users/gentashandi'
-
-export ZK_NOTEBOOK_DIR=~/zet/notes/
-alias neorg='cd ~/zet/notes/ && v'
+# Flutter
 alias raya='cd ~/Work/Raya/Projects/raya1/ && v'
+alias flcp='fvm flutter clean && fvm flutter pub get'
+alias flpr='fvm flutter pub run build_runner build --delete-conflicting-outputs'
+alias flcpr='flcp && flpr'
+alias flapkd='fvm flutter build apk --obfuscate --split-debug-info --release --flavor dev -t lib/main_dev.dart'
+alias flapks='fvm flutter build apk --obfuscate --split-debug-info --release --flavor stage -t lib/main_stage.dart'
+alias flapkp='fvm flutter build apk --obfuscate --split-debug-info --release --flavor prod -t lib/main_prod.dart'
+alias flabd='fvm flutter build appbundle --obfuscate --split-debug-info --release --flavor dev -t lib/main_dev.dart'
+alias flabs='fvm flutter build appbundle --obfuscate --split-debug-info --release --flavor stage -t lib/main_stage.dart'
+alias flabp='fvm flutter build appbundle --obfuscate --split-debug-info --release --flavor prod -t lib/main_prod.dart'
+alias flipad='fvm flutter build ipa --obfuscate --split-debug-info --release --flavor dev -t lib/main_dev.dart'
+alias flipas='fvm flutter build ipa --obfuscate --split-debug-info --release --flavor stage -t lib/main_stage.dart'
+alias flipap='fvm flutter build ipa --obfuscate --split-debug-info --release --flavor prod -t lib/main_prod.dart'
 
+
+# OpenJDK
+# export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export ANDROID_HOME=/opt/homebrew/share/android-commandlinetools/
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin/:$PATH
+# export PATH=$ANDROID_HOME/tools/bin:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+# Start tmux
 if [ -z "$TMUX" ]
 then
     tmux attach -t $USER || tmux new -s $USER
 fi
-# if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
-#     tmux attach-session -t $USER || tmux new-session -s $USER
-# fi
+
+
+# bun completions
+[ -s "/Users/gentashandi/.bun/_bun" ] && source "/Users/gentashandi/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# flutter fire
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+# export PATH=$HOME/fvm/default/bin:$PATH
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Created by `pipx` on 2024-06-28 07:01:51
+export PATH="$PATH:/Users/gentashandi/.local/bin"

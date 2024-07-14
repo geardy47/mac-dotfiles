@@ -1,23 +1,13 @@
 [includeIf "gitdir:~/"]
-	path = ~/.gitconfig-personal
+  path = ~/.gitconfig-personal
 [includeIf "gitdir:~/Work/Raya/"]
-	path = ~/.gitconfig-work
-[includeIf "gitdir:~/Work/Asklora/dinder/"]
-	path = ~/.gitconfig-personal
+  path = ~/.gitconfig-work
 [core]
-	editor = nvim
-[commit]
-	template = /Users/gentashandi/.gitmessage
+  editor = nvim
 [filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-; [merge]
-;   tool = meld
-; [mergetool "meld"]
-;   path = /opt/homebrew/bin/meld
-; [mergetool]
-;   keepBackup = false
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
 [init]
-	defaultBranch = main
+  defaultBranch = main
