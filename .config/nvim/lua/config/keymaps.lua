@@ -62,3 +62,8 @@ vim.keymap.set(
 )
 -- Search for the notes matching the current visual selection.
 vim.keymap.set("n", "<leader>zf", ":'<,'>ZkMatch<CR>", { desc = "Search note by selection" })
+
+vim.keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<cr>", { desc = "Window Left" })
+vim.keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<cr>", { desc = "Window Right" })
+vim.keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<cr>", { desc = "Window Down" })
+vim.keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<cr>", { desc = "Window Up" })
