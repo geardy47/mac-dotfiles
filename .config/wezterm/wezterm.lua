@@ -1,36 +1,37 @@
 local wezterm = require("wezterm")
 
-local function scheme_for_appearance(appearance)
-	if appearance:find("Dark") then
-		return "tokyonight_moon"
-		-- return "Catppuccin Frappe"
-	else
-		return "Catppuccin Latte"
-	end
-end
-
-local config = {
-	color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
-	font = wezterm.font_with_fallback({
-		"JetBrains Mono",
-		-- "Rec Mono Duotone",
-		{ family = "Symbols Nerd Font Mono", scale = 0.75 },
-	}),
-	window_background_opacity = 1,
-	macos_window_background_blur = 0,
-	force_reverse_video_cursor = true,
-	window_decorations = "RESIZE",
-	use_cap_height_to_scale_fallback_fonts = true,
-	font_size = 13,
-	scrollback_lines = 1000,
+return {
+	default_cursor_style = "BlinkingBlock",
+	color_scheme = "Catppuccin Mocha",
+	-- colors = {
+	-- 	cursor_bg = "#A6ACCD",
+	-- 	cursor_border = "#A6ACCD",
+	-- 	cursor_fg = "#1B1E28",
+	-- },
+	-- font
+	font = wezterm.font("CaskaydiaCove Nerd Font Mono", { weight = "Bold" }),
+	font_size = 16,
+	line_height = 1.2,
+	window_background_opacity = 0.94,
+	-- tab bar
+	use_fancy_tab_bar = false,
+	tab_bar_at_bottom = true,
 	hide_tab_bar_if_only_one_tab = true,
-	window_close_confirmation = "NeverPrompt",
-	window_padding = { left = 20, right = 5, top = 10, bottom = 0 },
+	tab_max_width = 999999,
+	-- window_padding = {
+	-- 	left = 30,
+	-- 	right = 30,
+	-- 	top = 30,
+	-- 	bottom = 30,
+	-- },
+	window_decorations = "RESIZE",
+	inactive_pane_hsb = {
+		brightness = 0.7,
+	},
 	send_composed_key_when_left_alt_is_pressed = false,
 	send_composed_key_when_right_alt_is_pressed = true,
-	adjust_window_size_when_changing_font_size = false,
-	warn_about_missing_glyphs = false,
-	front_end = "WebGpu",
+	-- key bindings
+	-- leader = mappings.leader,
+	-- keys = mappings.keys,
+	-- key_tables = mappings.key_tables,
 }
-
-return config
