@@ -8,6 +8,11 @@ return {
         -- "go",
         "scss",
         "svelte",
+        "lua",
+        "xml",
+        "http",
+        "json",
+        "graphql",
       },
       highlight = {
         disable = { "dart" },

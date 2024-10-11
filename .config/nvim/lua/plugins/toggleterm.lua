@@ -3,12 +3,11 @@ return {
     "akinsho/toggleterm.nvim",
     version = "*",
     -- config = true,
-    opts = {
-      require("which-key").register({
-        ["<leader>"] = {
-          f = { t = { name = "Terminals" } },
-        },
-      }),
-    },
+    opts = function(_, _)
+      require("which-key").add({
+        { "<leader>ft", group = "Terminals" },
+        { "<leader>", mode = "t", hidden = true },
+      })
+    end,
   },
 }
