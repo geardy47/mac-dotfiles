@@ -103,9 +103,9 @@ export EDITOR=nvim
 alias v=nvim
 
 # Flutter
-alias raya='cd ~/Work/Raya/Projects/raya1/ && v'
+alias raya='cd ~/Work/Raya/Projects/raya1/ && v lib/main_dev.dart'
 alias flcp='fvm flutter clean && fvm flutter pub get'
-alias flpr='fvm flutter pub run build_runner build --delete-conflicting-outputs'
+alias flpr='fvm dart run build_runner build --delete-conflicting-outputs'
 alias flcpr='flcp && flpr'
 alias flapkd='fvm flutter build apk --obfuscate --split-debug-info --release --flavor dev -t lib/main_dev.dart'
 alias flapks='fvm flutter build apk --obfuscate --split-debug-info --release --flavor stage -t lib/main_stage.dart'
@@ -117,7 +117,6 @@ alias flipad='fvm flutter build ipa --obfuscate --split-debug-info --release --f
 alias flipas='fvm flutter build ipa --obfuscate --split-debug-info --release --flavor stage -t lib/main_stage.dart'
 alias flipap='fvm flutter build ipa --obfuscate --split-debug-info --release --flavor prod -t lib/main_prod.dart'
 
-
 # OpenJDK
 # export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
 export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
@@ -126,12 +125,14 @@ export PATH=$ANDROID_HOME/cmdline-tools/latest/bin/:$PATH
 # export PATH=$ANDROID_HOME/tools/bin:$PATH
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 
+# Journal
+alias moon='cd ~/Personal/Moon/ && v Home.md'
+
 # Start tmux
 if [ -z "$TMUX" ]
 then
     tmux attach -t $USER || tmux new -s $USER
 fi
-
 
 # bun completions
 [ -s "/Users/gentashandi/.bun/_bun" ] && source "/Users/gentashandi/.bun/_bun"
@@ -152,3 +153,5 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Created by `pipx` on 2024-06-28 07:01:51
 export PATH="$PATH:/Users/gentashandi/.local/bin"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
