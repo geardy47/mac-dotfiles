@@ -1,0 +1,25 @@
+# Colorscheme
+theme = catppuccin-mocha
+background-opacity = 0.95
+background-blur-radius = 24
+
+# Font
+font-size = 18
+font-family = "FantasqueSansM Nerd Font Mono"
+font-thicken = true
+window-inherit-font-size = false
+cursor-style = block
+cursor-style-blink = false
+adjust-cell-height = 8
+adjust-cursor-height = 8
+
+# Window
+macos-titlebar-style = hidden
+confirm-close-surface = false
+window-decoration = true
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+
+auto-update = check
+
