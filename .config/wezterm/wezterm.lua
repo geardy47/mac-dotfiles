@@ -9,10 +9,10 @@ return {
 	-- 	cursor_fg = "#1B1E28",
 	-- },
 	-- font
-	font = wezterm.font("CaskaydiaCove Nerd Font Mono", { weight = "Bold" }),
-	font_size = 16,
-	line_height = 1.2,
-	window_background_opacity = 0.94,
+	font = wezterm.font("FantasqueSansM Nerd Font Mono", { weight = "Regular" }),
+	font_size = 18,
+	line_height = 1.3,
+	window_background_opacity = 0.9,
 	-- tab bar
 	use_fancy_tab_bar = false,
 	tab_bar_at_bottom = true,
