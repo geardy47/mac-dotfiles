@@ -112,10 +112,10 @@ alias flapks='fvm flutter build apk --obfuscate --split-debug-info --release --f
 alias flapkp='fvm flutter build apk --obfuscate --split-debug-info --release --flavor prod -t lib/main_prod.dart'
 alias flabd='fvm flutter build appbundle --obfuscate --split-debug-info --release --flavor dev -t lib/main_dev.dart'
 alias flabs='fvm flutter build appbundle --obfuscate --split-debug-info --release --flavor stage -t lib/main_stage.dart'
-alias flabp='fvm flutter build appbundle --obfuscate --split-debug-info --release --flavor prod -t lib/main_prod.dart'
+alias flabp='fvm flutter build appbundle --obfuscate --split-debug-info=code_mapping --release --flavor prod -t lib/main_prod.dart --extra-gen-snapshot-options=--save-obfuscation-map=code_mapping/mappingFile'
 alias flipad='fvm flutter build ipa --obfuscate --split-debug-info --release --flavor dev -t lib/main_dev.dart'
 alias flipas='fvm flutter build ipa --obfuscate --split-debug-info --release --flavor stage -t lib/main_stage.dart'
-alias flipap='fvm flutter build ipa --obfuscate --split-debug-info --release --flavor prod -t lib/main_prod.dart'
+alias flipap='fvm flutter build ipa --obfuscate --split-debug-info=code_mapping --release --flavor prod -t lib/main_prod.dart --extra-gen-snapshot-options=--save-obfuscation-map=code_mapping/mappingFile'
 
 # OpenJDK
 # export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
@@ -127,12 +127,13 @@ export PATH=$ANDROID_HOME/platform-tools:$PATH
 
 # Journal
 alias moon='cd ~/Personal/Moon/ && v Home.md'
+alias un='./.scripts/auto_commit.sh'
 
 # Start tmux
-if [ -z "$TMUX" ]
-then
-    tmux attach -t $USER || tmux new -s $USER
-fi
+#if [ -z "$TMUX" ]
+#then
+#    tmux attach -t $USER || tmux new -s $USER
+#fi
 
 # bun completions
 [ -s "/Users/gentashandi/.bun/_bun" ] && source "/Users/gentashandi/.bun/_bun"
@@ -153,5 +154,3 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Created by `pipx` on 2024-06-28 07:01:51
 export PATH="$PATH:/Users/gentashandi/.local/bin"
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
