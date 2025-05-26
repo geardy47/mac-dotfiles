@@ -42,7 +42,7 @@ return {
             require("telescope").extensions.flutter.commands()
           end, { buffer = buffer, desc = "Flutter tools" })
         end,
-        -- capabilities = capabilities,
+        capabilities = capabilities,
       },
 
       settings = {
